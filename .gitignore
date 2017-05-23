@@ -16,3 +16,4 @@
 # Idea
 *.iml
 .idea/
+*.log
