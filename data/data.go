@@ -11,11 +11,24 @@ import (
 
 var Db *sql.DB
 
+const (
+	DB_USER     = "ayong"
+	DB_PASSWORD = "ayong"
+	DB_NAME     = "chitchat"
+)
+
+
 func init() {
 	var err error
+
 	//Db, err = sql.Open("postgres", "dbname=chitchat sslmode=disable")
-	dbinfo := "user=ayong password=ayong dbname=chitchat sslmode=disable"
+
+	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
+		DB_USER, DB_PASSWORD, DB_NAME)
+	fmt.Println("zzz dbinfo : %s", dbinfo)
+	fmt.Println("Connection info = %s", dbinfo)
 	Db, err := sql.Open("postgres", dbinfo)
+
 
 	if err != nil {
 		log.Fatal(err)
