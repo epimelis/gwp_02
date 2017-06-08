@@ -21,13 +21,9 @@ const (
 func init() {
 	var err error
 
-	//Db, err = sql.Open("postgres", "dbname=chitchat sslmode=disable")
-
 	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
 		DB_USER, DB_PASSWORD, DB_NAME)
-	fmt.Println("zzz dbinfo : %s", dbinfo)
-	fmt.Println("Connection info = %s", dbinfo)
-	Db, err := sql.Open("postgres", dbinfo)
+	Db, err = sql.Open("postgres", dbinfo)
 
 
 	if err != nil {
