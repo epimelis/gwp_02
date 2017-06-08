@@ -21,6 +21,7 @@ const (
 func init() {
 	var err error
 
+	fmt.Println("testing")
 	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
 		DB_USER, DB_PASSWORD, DB_NAME)
 	Db, err = sql.Open("postgres", dbinfo)
