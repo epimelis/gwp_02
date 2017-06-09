@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"data/*"
+	"github.com/epimelis/gwp_02/data"
 )
 
 type Configuration struct {
