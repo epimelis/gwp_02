@@ -4,13 +4,17 @@ import (
 	"net/http"
 	"github.com/epimelis/gwp_02/data"
 
+	"fmt"
 )
 
 // GET /login
 // Show the login page
 func login(writer http.ResponseWriter, request *http.Request) {
+	fmt.Println("lll_1")
 	t := parseTemplateFiles("login.layout", "public.navbar", "login")
+	fmt.Println("lll_2")
 	t.Execute(writer, nil)
+	fmt.Println("lll_3")
 }
 
 // GET /signup
