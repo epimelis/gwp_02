@@ -42,7 +42,7 @@ func (user *User) Session() (session Session, err error) {
 	return
 }
 
-// Check if session is valid in the database-
+// Check if session is valid in the database
 func (session *Session) Check() (valid bool, err error) {
 	err = Db.QueryRow("SELECT id, uuid, email, user_id, created_at FROM sessions WHERE uuid = $1", session.Uuid).
 		Scan(&session.Id, &session.Uuid, &session.Email, &session.UserId, &session.CreatedAt)
@@ -91,7 +91,6 @@ func (user *User) Create() (err error) {
 	// information from postgres.
 	statement := "insert into users (uuid, name, email, password, created_at) values ($1, $2, $3, $4, $5) returning id, uuid, created_at"
 	stmt, err := Db.Prepare(statement)
-
 	if err != nil {
 		return
 	}
