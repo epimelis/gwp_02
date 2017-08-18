@@ -1,4 +1,4 @@
 git status
-git pull origin master
+git pull origin test2
 git pull origin --tags
 git status
